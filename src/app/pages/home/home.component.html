@@ -1,0 +1,40 @@
+<header>
+  <div class="container-sm m-auto text-black h-100 py-5">
+    <h1 class="text-center"> RICKY & MORTY </h1>
+  </div>
+</header>
+<div class="container-sm m-auto text-black">
+  <h2 class="text-center"> Tabla de personajes </h2>
+  <hr class="text-white">
+</div>
+
+
+
+
+  <!-- tabla de personajes -->
+  <!-- *ngFor  : me permite pintar tantos elementos como tenga un array -->
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Species</th>
+      <th scope="col">Acciones</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Coja el array y pinte uno por uno los elementos -->
+    <tr *ngFor="let personaje of personajes; let i=index">
+      <th scope="row" [id]="i">{{i}}</th>
+      <td>{{personaje.name}}</td>
+      <td>{{personaje.species}}</td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete()">Borrar</button>
+        <button type="submit" class="btn btn-success" (click)="update()">Ver Detalles</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
